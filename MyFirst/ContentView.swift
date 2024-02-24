@@ -1,19 +1,18 @@
-//
-//  ContentView.swift
-//  MyFirst
-//
-//  Created by hiroki.nakagawa on 2024/02/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var outputText = "Hello, world!"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(outputText)
+                .font(.largeTitle)
+            
+            Button("切り替えボタン") {
+                outputText = "Hi, Swift!"
+            }
+            .padding(.all)
+            .background(.blue)
+            .foregroundColor(.white)
         }
         .padding()
     }
